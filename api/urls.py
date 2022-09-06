@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .handlers import vehicles
+
+app_name = 'api'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls', namespace='api'))
+    path('vehicles/', vehicles.get_all)
 ]

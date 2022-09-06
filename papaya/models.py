@@ -16,7 +16,7 @@ class Models(models.Model):   # I'd rather have a different name tbh
 
 class Vehicles(models.Model):
     legal_identifier = models.CharField(max_length=200, primary_key=True)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     frame_size = models.IntegerField()
     status = models.IntegerField()
     model_id = models.ForeignKey(Models, on_delete=models.CASCADE)
